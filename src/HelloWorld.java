@@ -11,7 +11,8 @@ import java.io.PrintWriter;
 public class HelloWorld extends HttpServlet {
 
     private String msgGlobal = "";
-    private int cesarNum = 5;
+    private int NUMERO_CESAR = 5;
+    private String line = "<h3></h3>";
 
     public HelloWorld() {
         super();
@@ -24,29 +25,26 @@ public class HelloWorld extends HttpServlet {
         pwOut = resp.getWriter();
 
 
-        resp.setContentType("text/html");
+        String frase = req.getParameter("frase");
 
-        pwOut.println("<html>");
-        pwOut.println("<head><title> Practica M06 </title></head>");
-        pwOut.println("<body>");
-        pwOut.println("<h1> Práctica César </h1>");
-        pwOut.println("<h2>Introduce palabra: </h2>");
-        pwOut.println("<p><input type=\"text\" name=\"fraseInicial\"/><button>GO</button></p>");
+        String msgGlobal;
 
-        String[] frase = req.getParameterValues("fraseInicial");
 
-        pwOut.println("<p>prueba</p>");
-
-        for (int i = 0; i < cesarNum; i++) {
-
-            String line = "<h3></h3>";
-        }
-
-        pwOut.println("</body></html>");
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        PrintWriter pwOut;
+        pwOut = resp.getWriter();
+
+        for (int i = 0; i < NUMERO_CESAR; i++) {
+
+            String line = ;
+        }
+
+        pwOut.println("</body></html>");
+
 
     }
 
@@ -55,4 +53,27 @@ public class HelloWorld extends HttpServlet {
         msgGlobal = "HOLA GUORLD";
 
     }
+
+    public String cesarFrase (String fraseInicial){
+        String fraseFinal = "";
+        fraseInicial.toLowerCase();
+
+        for (int i = 0; i < fraseInicial.length(); i++) {
+            char c = ' ';
+            int ascii = fraseInicial.codePointAt(i);
+
+            if(fraseInicial.charAt(i) == ' '){
+                c = ' ';
+            } else if ( ascii > 60 && ascii < 123) {
+
+            }
+
+            fraseFinal += c;
+        }
+
+
+
+        return fraseFinal;
+    }
+
 }
