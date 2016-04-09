@@ -23,8 +23,6 @@ public class HelloWorld extends HttpServlet {
 
         PrintWriter pwOut;
         pwOut = resp.getWriter();
-
-
         String frase = req.getParameter("frase");
 
         String msgGlobal;
@@ -38,20 +36,22 @@ public class HelloWorld extends HttpServlet {
         PrintWriter pwOut;
         pwOut = resp.getWriter();
 
+        String cesarIni = req.getParameter("frase");
+        String cesarN = "";
+        String cesarXml = "";
+
         for (int i = 0; i < NUMERO_CESAR; i++) {
 
-            String line = ;
+            cesarN = cesarFrase(cesarN);
+            cesarXml += "\n<h3>"+cesarN+"</h3>";
+            pwOut.println(cesarXml);
         }
-
         pwOut.println("</body></html>");
-
-
     }
 
     @Override
     public void init() throws ServletException {
         msgGlobal = "HOLA GUORLD";
-
     }
 
     public String cesarFrase (String fraseInicial){
@@ -60,19 +60,14 @@ public class HelloWorld extends HttpServlet {
 
         for (int i = 0; i < fraseInicial.length(); i++) {
             char c = ' ';
-            int ascii = fraseInicial.codePointAt(i);
+            int charAscii = fraseInicial.codePointAt(i);
 
-            if(fraseInicial.charAt(i) == ' '){
-                c = ' ';
-            } else if ( ascii > 60 && ascii < 123) {
-
-            }
+            if(fraseInicial.charAt(i) == ' ')  c = ' ';
+            else if (charAscii > 96 && charAscii < 122)  c = (char)(charAscii+1);
+            else if (charAscii == 122)  c = 'a';
 
             fraseFinal += c;
         }
-
-
-
         return fraseFinal;
     }
 

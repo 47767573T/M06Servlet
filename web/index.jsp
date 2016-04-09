@@ -8,11 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title href="" >$Title$</title>
+    <title>$Title$</title>
   </head>
   <body>
-    <form action="Calc" method="POST">
-      <
-    </form>
+    <a href="./cesar.jsp"/>
   </body>
 </html>

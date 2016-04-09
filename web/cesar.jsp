@@ -11,11 +11,12 @@
     <title>CIFRADO CESAR</title>
 </head>
     <body>
-        <form action="Calc" method="POST">
+        <form action="./HelloWorld" method="POST">
             Por favor introduzca una frase y pulse el boton<br>
             <p>
                 <input type="text" name="frase" size="100px">
                 <input type="submit" name="GO" value="enviar">
+                <h3></h3>
                 <!--<output type="textarea"/>-->
             </p>
         </form>
